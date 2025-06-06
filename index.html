@@ -3,75 +3,167 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>My Dev Portfolio</title>
-  <link rel="stylesheet" href="style.css" />
-  <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
+  <title>Rexlee's Dev Portfolio</title>
   <style>
-    body {
+    /* Reset and base */
+    * {
       margin: 0;
-      font-family: Arial, sans-serif;
-      background: #121212;
-      color: white;
-      text-align: center;
+      padding: 0;
+      box-sizing: border-box;
     }
-    .hero {
-      padding: 100px 20px;
-      background: #1e1e1e;
-    }
-    .projects {
-      padding: 50px 20px;
-    }
-    .projects .card {
-      background: #222;
+    body {
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background-color: #121212;
+      color: #eee;
+      line-height: 1.6;
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
       padding: 20px;
-      margin: 20px auto;
-      width: 80%;
-      border-radius: 10px;
-      transition: transform 0.3s;
-      cursor: pointer;
-    }
-    .projects .card:hover {
-      transform: scale(1.05);
-    }
-    footer {
-      background: #1a1a1a;
-      padding: 20px;
-      font-size: 14px;
-      color: #888;
-      margin-top: 50px;
     }
     a {
-      color: #4ea1d3;
+      color: inherit;
       text-decoration: none;
     }
     a:hover {
       text-decoration: underline;
     }
+
+    header {
+      text-align: center;
+      margin-bottom: 50px;
+    }
+    header h1 {
+      font-size: 3rem;
+      color: #f0a500;
+      margin-bottom: 10px;
+      font-weight: 700;
+    }
+    header p {
+      font-size: 1.2rem;
+      color: #bbb;
+    }
+
+    #projects {
+      max-width: 900px;
+      margin: 0 auto 60px;
+    }
+
+    #projects h2 {
+      font-size: 2.8rem;
+      margin-bottom: 30px;
+      color: #f0a500;
+      text-align: center;
+      font-weight: 700;
+      letter-spacing: 1.5px;
+    }
+
+    .project {
+      background-color: #1a1a1a;
+      padding: 30px 40px;
+      margin-bottom: 40px;
+      border-radius: 12px;
+      box-shadow: 0 8px 20px rgba(0,0,0,0.6);
+      color: #ddd;
+      transition: transform 0.3s ease;
+    }
+    .project:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 12px 30px rgba(240, 165, 0, 0.5);
+    }
+
+    .project h3 {
+      font-size: 2rem;
+      margin-bottom: 15px;
+      color: #f0a500;
+      font-weight: 600;
+    }
+
+    .project p {
+      font-size: 1.15rem;
+      margin-bottom: 30px;
+      color: #ccc;
+    }
+
+    .project-links {
+      display: flex;
+      gap: 20px;
+      justify-content: flex-start;
+    }
+
+    .project-links a.btn {
+      padding: 14px 30px;
+      font-weight: 600;
+      border-radius: 8px;
+      box-shadow: 0 6px 15px rgba(0,0,0,0.4);
+      user-select: none;
+      cursor: pointer;
+      transition: background-color 0.3s ease, border-color 0.3s ease, color 0.3s ease;
+      border: 2px solid transparent;
+      display: inline-block;
+      text-align: center;
+      min-width: 140px;
+    }
+
+    .btn-demo {
+      background-color: #28a745;
+      color: white;
+      border-color: #28a745;
+    }
+    .btn-demo:hover {
+      background-color: #218838;
+      border-color: #1e7e34;
+      color: #d4f4dd;
+    }
+
+    .btn-code {
+      background-color: #007bff;
+      color: white;
+      border-color: #007bff;
+    }
+    .btn-code:hover {
+      background-color: #0056b3;
+      border-color: #004085;
+      color: #cce5ff;
+    }
+
+    footer {
+      text-align: center;
+      padding: 15px 10px;
+      font-size: 0.9rem;
+      color: #666;
+      border-top: 1px solid #333;
+      margin-top: 60px;
+    }
   </style>
 </head>
 <body>
-  <header class="hero" data-aos="fade-down">
-    <h1>Hello, I'm Rexlee</h1>
-    <p>Web Developer | Designer</p>
+
+  <header>
+    <h1>Rexlee's Dev Portfolio</h1>
+    <p>Welcome to my personal portfolio where I showcase my projects and skills.</p>
   </header>
 
-  <section class="projects" data-aos="fade-up">
-    <h2>Featured Project</h2>
-    <div class="card" onclick="window.open('https://rexlee124.github.io/weather-app/', '_blank')">
+  <section id="projects">
+    <h2>My Projects</h2>
+
+    <div class="project">
       <h3>Weather App</h3>
-      <p>Displays live weather data.</p>
-      <a href="https://rexlee124.github.io/weather-app/" target="_blank" rel="noopener noreferrer">Live Demo</a> | 
-      <a href="https://github.com/Rexlee124/weather-app" target="_blank" rel="noopener noreferrer">View Code</a>
+      <p>A simple weather app showing current weather data with location search.</p>
+      <div class="project-links">
+        <a href="https://rexlee124.github.io/weather-app/" target="_blank" rel="noopener noreferrer" class="btn btn-demo">View Live Demo</a>
+        <a href="https://github.com/Rexlee124/weather-app" target="_blank" rel="noopener noreferrer" class="btn btn-code">View Code</a>
+      </div>
     </div>
+    
+    <!-- Add more projects here -->
+
   </section>
 
   <footer>
     &copy; 2025 Rexlee. All rights reserved.
   </footer>
 
-  <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
-  <script>
-    AOS.init();
-  </script>
 </body>
 </html>
