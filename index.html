@@ -2,33 +2,79 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Dark Portfolio</title>
-  <link rel="stylesheet" href="style.css">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>My Dev Portfolio</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Segoe UI', sans-serif;
+      background-color: #0d1117;
+      color: #c9d1d9;
+      line-height: 1.6;
+      padding: 20px;
+    }
+    header {
+      text-align: center;
+      padding: 50px 20px 20px;
+    }
+    header h1 {
+      font-size: 2.5rem;
+      color: #58a6ff;
+    }
+    .project {
+      background-color: #161b22;
+      margin: 20px auto;
+      padding: 20px;
+      border-radius: 12px;
+      max-width: 700px;
+      box-shadow: 0 0 20px rgba(88, 166, 255, 0.1);
+      transition: transform 0.3s ease;
+    }
+    .project:hover {
+      transform: translateY(-5px);
+    }
+    .project h3 {
+      color: #79c0ff;
+    }
+    .project a {
+      color: #58a6ff;
+      text-decoration: none;
+      margin-right: 15px;
+    }
+    .project a:hover {
+      text-decoration: underline;
+    }
+    footer {
+      text-align: center;
+      padding: 20px;
+      font-size: 14px;
+      color: #8b949e;
+    }
+  </style>
 </head>
 <body>
-  <header class="hero">
-    <h1 class="fade-in">Hi, I'm Rexlee</h1>
-    <p class="fade-in delay">A Frontend Developer & Designer</p>
-    <a href="#projects" class="btn slide-up">View My Work</a>
+
+  <header>
+    <h1>Welcome to My Dev Portfolio</h1>
+    <p>I build modern websites and love sharing my work.</p>
   </header>
 
-  <section class="about fade-in-up">
-    <h2>About Me</h2>
-    <p>I design beautiful, responsive websites with HTML, CSS & JavaScript.</p>
-  </section>
+  <section id="projects">
+    <h2 style="text-align:center; color:#58a6ff;">Projects</h2>
 
-  <section class="projects" id="projects">
-    <h2 class="fade-in-up">Projects</h2>
-    <div class="project-card zoom-in">
+    <div class="project">
       <h3>Weather App</h3>
-      <p>Live weather tracker using open APIs.</p>
-      <a href="#" class="btn">Live Demo</a>
+      <p>A sleek weather app that lets you search by city to view current weather data.</p>
+      <a href="https://rexlee124.github.io/weather-app/" target="_blank">🌐 View Live</a>
+      <a href="https://github.com/Rexlee124/weather-app" target="_blank">💻 View Code</a>
     </div>
+
+    <!-- You can add more projects here using the same structure -->
   </section>
 
-  <footer class="fade-in-up">
-    <p>© 2025 Rexlee. All rights reserved.</p>
+  <footer>
+    &copy; 2025 Rexlee. All rights reserved.
   </footer>
+
 </body>
 </html>
