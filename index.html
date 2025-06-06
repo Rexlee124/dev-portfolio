@@ -5,145 +5,219 @@
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Rexlee's Dev Portfolio</title>
   <style>
-    /* Reset and base */
+    /* Reset some basics */
     * {
+      box-sizing: border-box;
       margin: 0;
       padding: 0;
-      box-sizing: border-box;
     }
+
     body {
-      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
       background-color: #121212;
       color: #eee;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
       line-height: 1.6;
+      padding: 30px 20px;
+      text-align: center;
       min-height: 100vh;
       display: flex;
       flex-direction: column;
-      justify-content: space-between;
-      padding: 20px;
-    }
-    a {
-      color: inherit;
-      text-decoration: none;
-    }
-    a:hover {
-      text-decoration: underline;
-    }
-
-    header {
-      text-align: center;
-      margin-bottom: 50px;
-    }
-    header h1 {
-      font-size: 3rem;
-      color: #f0a500;
-      margin-bottom: 10px;
-      font-weight: 700;
-    }
-    header p {
-      font-size: 1.2rem;
-      color: #bbb;
-    }
-
-    #projects {
-      max-width: 900px;
-      margin: 0 auto 60px;
-    }
-
-    #projects h2 {
-      font-size: 2.8rem;
-      margin-bottom: 30px;
-      color: #f0a500;
-      text-align: center;
-      font-weight: 700;
-      letter-spacing: 1.5px;
-    }
-
-    .project {
-      background-color: #1a1a1a;
-      padding: 30px 40px;
-      margin-bottom: 40px;
-      border-radius: 12px;
-      box-shadow: 0 8px 20px rgba(0,0,0,0.6);
-      color: #ddd;
-      transition: transform 0.3s ease;
-    }
-    .project:hover {
-      transform: translateY(-5px);
-      box-shadow: 0 12px 30px rgba(240, 165, 0, 0.5);
-    }
-
-    .project h3 {
-      font-size: 2rem;
-      margin-bottom: 15px;
-      color: #f0a500;
-      font-weight: 600;
-    }
-
-    .project p {
-      font-size: 1.15rem;
-      margin-bottom: 30px;
-      color: #ccc;
-    }
-
-    .project-links {
-      display: flex;
-      gap: 20px;
       justify-content: flex-start;
     }
 
-    .project-links a.btn {
-      padding: 14px 30px;
-      font-weight: 600;
+    h1 {
+      font-size: 3rem;
+      margin-bottom: 15px;
+      font-weight: 900;
+      color: #f0f0f0;
+    }
+
+    p.intro {
+      font-size: 1.25rem;
+      margin-bottom: 30px;
+      color: #bbb;
+      max-width: 700px;
+      margin-left: auto;
+      margin-right: auto;
+    }
+
+    img.profile-pic {
+      max-width: 300px;
+      width: 100%;
+      border-radius: 15px;
+      margin-bottom: 30px;
+      box-shadow: 0 0 15px rgba(255,255,255,0.15);
+    }
+
+    button {
+      background-color: #2563eb;
+      border: none;
+      color: white;
+      padding: 12px 24px;
+      font-size: 1.1rem;
       border-radius: 8px;
-      box-shadow: 0 6px 15px rgba(0,0,0,0.4);
-      user-select: none;
       cursor: pointer;
-      transition: background-color 0.3s ease, border-color 0.3s ease, color 0.3s ease;
-      border: 2px solid transparent;
+      margin-bottom: 30px;
+      transition: background-color 0.3s ease;
+    }
+
+    button:hover {
+      background-color: #1e40af;
+    }
+
+    #moreInfo {
+      display: none;
+      max-width: 600px;
+      margin: 0 auto 40px;
+      font-size: 1.15rem;
+      color: #ccc;
+    }
+
+    hr {
+      border: 1px solid #333;
+      margin: 40px 0;
+      max-width: 600px;
+      margin-left: auto;
+      margin-right: auto;
+    }
+
+    h2 {
+      font-size: 2rem;
+      margin-bottom: 20px;
+      color: #f0f0f0;
+      font-weight: 700;
+    }
+
+    /* Projects Section */
+    #projects {
+      max-width: 700px;
+      margin: 0 auto 60px;
+      text-align: left;
+    }
+
+    .project {
+      background-color: #1e293b;
+      padding: 20px 25px;
+      border-radius: 12px;
+      margin-bottom: 25px;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.6);
+      transition: transform 0.3s ease;
+    }
+
+    .project:hover {
+      transform: translateY(-6px);
+      box-shadow: 0 8px 24px rgba(37, 99, 235, 0.6);
+    }
+
+    .project h3 {
+      position: relative;
+      color: #fff;
+      font-weight: 700;
+      font-size: 1.8rem;
+      margin-bottom: 10px;
+      overflow: hidden;
+    }
+
+    .project h3::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: -75%;
+      width: 50%;
+      height: 100%;
+      background: linear-gradient(
+        120deg,
+        transparent,
+        rgba(255, 255, 255, 0.4),
+        transparent
+      );
+      transform: skewX(-25deg);
+      animation: shimmer 2.5s infinite;
+    }
+
+    @keyframes shimmer {
+      0% {
+        left: -75%;
+      }
+      100% {
+        left: 125%;
+      }
+    }
+
+    .project p {
+      color: #bbb;
+      font-size: 1rem;
+      margin-bottom: 15px;
+    }
+
+    .project a {
       display: inline-block;
+      margin-right: 15px;
+      padding: 10px 22px;
+      border-radius: 8px;
+      background-color: #2563eb;
+      color: white;
+      text-decoration: none;
+      font-weight: 600;
+      transition: background-color 0.3s ease;
+    }
+
+    .project a:hover {
+      background-color: #1e40af;
+    }
+
+    /* Contact Section */
+    #contact {
+      max-width: 600px;
+      margin: 0 auto 40px;
+      color: #bbb;
+      font-size: 1.1rem;
       text-align: center;
-      min-width: 140px;
     }
 
-    .btn-demo {
-      background-color: #28a745;
-      color: white;
-      border-color: #28a745;
-    }
-    .btn-demo:hover {
-      background-color: #218838;
-      border-color: #1e7e34;
-      color: #d4f4dd;
+    #contact a {
+      color: #2563eb;
+      text-decoration: none;
+      font-weight: 600;
+      transition: color 0.3s ease;
     }
 
-    .btn-code {
-      background-color: #007bff;
-      color: white;
-      border-color: #007bff;
-    }
-    .btn-code:hover {
-      background-color: #0056b3;
-      border-color: #004085;
-      color: #cce5ff;
+    #contact a:hover {
+      color: #1e40af;
     }
 
     footer {
       text-align: center;
-      padding: 15px 10px;
       font-size: 0.9rem;
-      color: #666;
-      border-top: 1px solid #333;
-      margin-top: 60px;
+      color: #555;
+      padding: 15px 0 5px;
     }
   </style>
 </head>
 <body>
 
-  <header>
-    <h1>Rexlee's Dev Portfolio</h1>
-    <p>Welcome to my personal portfolio where I showcase my projects and skills.</p>
-  </header>
+  <h1>Welcome to Rexlee's Dev Portfolio</h1>
+
+  <p class="intro">
+    Hello! I’m a beginner developer passionate about building clean, modern websites and web apps. Here you’ll find some of my projects and ways to contact me.
+  </p>
+
+  <img
+    src="https://i.ibb.co/27sPqGNH/199863be3b12630c791cb5b11850b36a.jpg"
+    alt="Rexlee's profile picture"
+    class="profile-pic"
+  />
+
+  <button onclick="document.getElementById('moreInfo').style.display = 'block'; this.style.display = 'none';">
+    Show More
+  </button>
+  <div id="moreInfo">
+    <p>
+      I enjoy coding beautiful and user-friendly websites. I am open to freelance projects and collaborations. Feel free to reach out!
+    </p>
+  </div>
+
+  <hr />
 
   <section id="projects">
     <h2>My Projects</h2>
@@ -151,14 +225,17 @@
     <div class="project">
       <h3>Weather App</h3>
       <p>A simple weather app showing current weather data with location search.</p>
-      <div class="project-links">
-        <a href="https://rexlee124.github.io/weather-app/" target="_blank" rel="noopener noreferrer" class="btn btn-demo">View Live Demo</a>
-        <a href="https://github.com/Rexlee124/weather-app" target="_blank" rel="noopener noreferrer" class="btn btn-code">View Code</a>
-      </div>
+      <a href="https://rexlee124.github.io/weather-app/" target="_blank" rel="noopener noreferrer">Live Demo</a>
+      <a href="https://github.com/Rexlee124/weather-app" target="_blank" rel="noopener noreferrer">View Code</a>
     </div>
-    
-    <!-- Add more projects here -->
 
+    <!-- Add more projects here -->
+  </section>
+
+  <section id="contact">
+    <h2>Contact Me</h2>
+    <p><strong>Email:</strong> <a href="mailto:leerex393@gmail.com">leerex393@gmail.com</a></p>
+    <p><strong>WhatsApp:</strong> <a href="https://wa.me/qr/IEC6QLTWUZ4UF1" target="_blank" rel="noopener noreferrer">Chat on WhatsApp</a></p>
   </section>
 
   <footer>
